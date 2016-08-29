@@ -1,4 +1,6 @@
 
+require( '../css/list.css' );
+
 window._page_name = 'list';
 
 var API = require( './include/api.js' )

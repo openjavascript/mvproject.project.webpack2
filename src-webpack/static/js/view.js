@@ -1,4 +1,6 @@
 
+require( '../css/view.css' );
+
 window._page_name = 'view';
 
 var API = require( './include/api.js' )
