@@ -84,7 +84,7 @@ var config = {
           , React: "react"
           , ReactDOM: "react-dom"
         })
-        , new ExtractTextPlugin( '../css/[name].css')
+        , new ExtractTextPlugin( 'css/[name].css')
         , new webpack.HotModuleReplacementPlugin() 
         , new I18nPlugin(
             languages[ 'cn' ]
