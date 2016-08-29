@@ -1,4 +1,6 @@
 
+require( '../css/index.css' );
+
 window._page_name = 'index';
 
 var API = require( './include/api.js' )

@@ -36,7 +36,8 @@ var config = {
 
     , module: {
         loaders: [
-            { test: /\.css$/, loader: "style!css" }
+            { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') }
+            , { test: /\.less$/, loader: ExtractTextPlugin.extract('css!less') }
             , { test: /\.json$/, loader: "json-loader" }
             , { test: /\.jsx$/, loader: "jsx-loader?insertPragma=React.DOM&harmony" }
 			, { test: /\.tpl$/, loader: "underscore-template-loader" }
@@ -81,7 +82,7 @@ var config = {
           , React: "react"
           , ReactDOM: "react-dom"
         })
-        , new ExtractTextPlugin('[name].css')
+        , new ExtractTextPlugin('../css/[name].css')
         , new webpack.HotModuleReplacementPlugin() 
         , new I18nPlugin(
             languages[ 'cn' ]
