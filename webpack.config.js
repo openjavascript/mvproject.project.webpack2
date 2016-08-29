@@ -30,8 +30,10 @@ var config = {
     entry: entry
 
     , output: {
-        path: _outputRoot + '/static/js/',
-        filename: "[name].js"
+        path: _outputRoot + '/static/'
+        , publicPath: "./static/"
+        , filename: "js/[name].js"
+        //, chunkFilename: 'js/[id].chunk.js' 
     }
 
     , module: {
@@ -82,7 +84,7 @@ var config = {
           , React: "react"
           , ReactDOM: "react-dom"
         })
-        , new ExtractTextPlugin('../css/[name].css')
+        , new ExtractTextPlugin( '../css/[name].css')
         , new webpack.HotModuleReplacementPlugin() 
         , new I18nPlugin(
             languages[ 'cn' ]
@@ -100,7 +102,7 @@ foreachFolder(_watchPath,function(list){
             config.plugins.push(new HtmlWebpackPlugin({ 
 				filename: _outputRoot + name + '.html', 
 				template: _watchPath + name + '.html', 
-				inject: true, 
+				inject: 'body', 
 				hash: true, 
 				chunks: ['vendors', name]
 			}));
