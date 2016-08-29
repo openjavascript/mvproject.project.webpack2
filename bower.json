@@ -1,0 +1,26 @@
+{
+  "name": "your_project_name",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "yourname <yourname@yourmain.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "swfobject-amd": "~2.3.0",
+    "mv.js": "latest",
+    "mv.log.js": "latest",
+    "mv.basehandler.js": "latest",
+    "mv.const.js": "latest",
+    "mv.action.js": "latest",
+    "mv.jquery.visibility.js": "latest"
+  }
+}
