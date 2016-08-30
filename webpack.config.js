@@ -5,7 +5,6 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-var BowerWebpackPlugin = require("bower-webpack-plugin");
 var I18nPlugin = require("i18n-webpack-plugin");
 
 var _watchPath = "./src-webpack/";
@@ -46,14 +45,6 @@ var config = {
 			, { test: /\.jpg$/, loader: "file-loader" },
 			, { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
         ]
-        /*
-        , postLoaders: [ {
-            test: /\.js$/,
-            exclude: /\/(node_modules|bower_components)\//,
-            loader: 'autopolyfiller',
-            query: { browsers: [ 'ie >= 7' ] }
-        }] 
-        */
     }
     , externals: {
         'react': 'React'
@@ -69,10 +60,7 @@ var config = {
 
     }
     , plugins: [
-        new BowerWebpackPlugin({
-          excludes: /.*\.less/
-        })
-        , new CommonsChunkPlugin({
+        new CommonsChunkPlugin({
             name: 'vendors', 
             chunks: chunks, 
             minChunks: chunks.length 

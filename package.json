@@ -11,8 +11,6 @@
   "author": "yourname@yourmail.com",
   "license": "ISC",
   "devDependencies": {
-    "bower": "^1.7.9",
-    "bower-webpack-plugin": "^0.1.8",
     "css-loader": "^0.23.1",
     "debug": "2.1.0",
     "es5-shim": "^4.5.9",
@@ -43,10 +41,8 @@
   }, 
   "dependencies": {
     "mv.action.js": "^1.0.1",
-    "mv.basehandler.js": "^1.0.1",
     "mv.const.js": "^1.0.1",
     "mv.jquery.visibility.js": "^1.0.1",
-    "mv.js": "^1.0.1",
     "mv.log.js": "^1.0.1",
     "swfobject-amd": "^2.3.1"
   }
