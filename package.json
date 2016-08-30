@@ -40,5 +40,15 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
+  }, 
+  "dependencies": {
+    "mv.action.js": "^1.0.1",
+    "mv.basehandler.js": "^1.0.1",
+    "mv.const.js": "^1.0.1",
+    "mv.jquery.visibility.js": "^1.0.1",
+    "mv.js": "^1.0.1",
+    "mv.log.js": "^1.0.1",
+    "swfobject-amd": "^2.3.1"
   }
+
 }

@@ -64,7 +64,7 @@ var config = {
     , resolve: {
         extensions: ['', '.js', '.jsx']
         , alias: {
-            'swfobject': __dirname + '/bower_components/swfobject-amd/swfobject.js'
+            'swfobject': __dirname + '/node_modules/swfobject-amd/swfobject.js'
         }
 
     }
