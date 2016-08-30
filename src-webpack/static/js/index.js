@@ -1,6 +1,6 @@
 
-require( '../css/_all_include.css' );
-require( '../css/index.css' );
+require( '../css/_all_include.less' );
+require( '../css/index.less' );
 
 window._page_name = 'index';
 

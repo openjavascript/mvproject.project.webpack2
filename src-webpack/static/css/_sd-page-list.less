@@ -1,0 +1,67 @@
+/*分页*/
+.page-box{
+  margin: 10px 0;
+  text-align: center;
+}
+
+.error-tips{
+  font-size: 18px;
+  text-align: center;
+  margin-top: 50px;
+}
+.error-tips b{
+  color: #ff0000;
+}
+
+/*loading*/
+.spinner{
+  width: 150px;
+  height: 31px;
+  margin: 100px auto;
+  font-size: 18px;
+}
+.spinner i{
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  background-image: url(http://p1.qhimg.com/d/inn/60ebd893/img/loading.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  vertical-align: -8px;
+  -webkit-animation: sk-rotateplane 1.2s infinite linear;
+  animation: sk-rotateplane 1.2s infinite linear;
+  /* 低版本浏览器不支持CSS3动画隐藏 */
+  *display: none;
+  _display: none;
+}
+
+@-webkit-keyframes loading-w {
+  0% { width: 0px }
+  100% { width: 100% }
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: rotate(0deg) }
+  /*50% { -webkit-transform: perspective(120px) rotateY(180deg) }*/
+  100% { -webkit-transform: rotate(360deg) }
+}
+
+/*@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+*/

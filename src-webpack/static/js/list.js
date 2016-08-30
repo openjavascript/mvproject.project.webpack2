@@ -1,6 +1,7 @@
 
-require( '../css/_all_include.css' );
-require( '../css/list.css' );
+require( '../css/_all_include.less' );
+require( '../css/_pagination.less' );
+require( '../css/list.less' );
 
 window._page_name = 'list';
 

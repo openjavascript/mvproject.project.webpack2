@@ -1,6 +1,6 @@
 
-require( '../css/_all_include.css' );
-require( '../css/view.css' );
+require( '../css/_all_include.less' );
+require( '../css/view.less' );
 
 window._page_name = 'view';
 
