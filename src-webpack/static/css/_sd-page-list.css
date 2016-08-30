@@ -74,7 +74,7 @@
 }
 
 .category-list .item-content .item dl dd .view i{
-  background-image: URL(../img/view.png);
+  background-image: URL(./img/view.png);
   background-position:-14px 0;
   background-repeat:no-repeat;
 }
@@ -92,7 +92,7 @@
     top: 6px;
     left: 6px;
     background-size: 24px 21px;
-    /*background-image: url(../img/index/play-icon.png);*/
+    /*background-image: url(./img/index/play-icon.png);*/
     background-position: center center;
     background-repeat: no-repeat;
 
@@ -221,8 +221,6 @@
 }
 
 
-
-
 .category-list .item-content dl dd{
   height: 20px;
   line-height: 20px;
@@ -254,11 +252,11 @@
 }
 
 .category-list .item-content dl dd .zan i{
-  background-image:URL(../img/icon_index.png);
+  background-image:URL(./img/icon_index.png);
   background-position: -16px -38px;
 }
 .category-list .item-content dl dd .view i{
-  background-image:URL(../img/icon_index.png);
+  background-image:URL(./img/icon_index.png);
   background-position:-16px 3px;
   background-repeat:no-repeat;
 }

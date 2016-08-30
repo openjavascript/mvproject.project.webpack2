@@ -1,4 +1,5 @@
 
+require( '../css/_all_include.css' );
 require( '../css/list.css' );
 
 window._page_name = 'list';
