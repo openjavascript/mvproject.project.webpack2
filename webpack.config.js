@@ -5,7 +5,6 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-var BowerWebpackPlugin = require("bower-webpack-plugin");
 var I18nPlugin = require("i18n-webpack-plugin");
 
 var _watchPath = "./src-webpack/";
@@ -30,27 +29,22 @@ var config = {
     entry: entry
 
     , output: {
-        path: _outputRoot + '/static/js/',
-        filename: "[name].js"
+        path: _outputRoot + '/static/'
+        , publicPath: "./static/"
+        , filename: "js/[name].js"
+        //, chunkFilename: 'js/[id].chunk.js' 
     }
 
     , module: {
         loaders: [
-            { test: /\.css$/, loader: "style!css" }
+            { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') }
+            , { test: /\.less$/, loader: ExtractTextPlugin.extract('css!less') }
             , { test: /\.json$/, loader: "json-loader" }
             , { test: /\.jsx$/, loader: "jsx-loader?insertPragma=React.DOM&harmony" }
 			, { test: /\.tpl$/, loader: "underscore-template-loader" }
 			, { test: /\.jpg$/, loader: "file-loader" },
 			, { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
         ]
-        /*
-        , postLoaders: [ {
-            test: /\.js$/,
-            exclude: /\/(node_modules|bower_components)\//,
-            loader: 'autopolyfiller',
-            query: { browsers: [ 'ie >= 7' ] }
-        }] 
-        */
     }
     , externals: {
         'react': 'React'
@@ -61,15 +55,12 @@ var config = {
     , resolve: {
         extensions: ['', '.js', '.jsx']
         , alias: {
-            'swfobject': __dirname + '/bower_components/swfobject-amd/swfobject.js'
+            'swfobject': __dirname + '/node_modules/swfobject-amd/swfobject.js'
         }
 
     }
     , plugins: [
-        new BowerWebpackPlugin({
-          excludes: /.*\.less/
-        })
-        , new CommonsChunkPlugin({
+        new CommonsChunkPlugin({
             name: 'vendors', 
             chunks: chunks, 
             minChunks: chunks.length 
@@ -81,7 +72,7 @@ var config = {
           , React: "react"
           , ReactDOM: "react-dom"
         })
-        , new ExtractTextPlugin('[name].css')
+        , new ExtractTextPlugin( 'css/[name].css')
         , new webpack.HotModuleReplacementPlugin() 
         , new I18nPlugin(
             languages[ 'cn' ]
@@ -99,7 +90,7 @@ foreachFolder(_watchPath,function(list){
             config.plugins.push(new HtmlWebpackPlugin({ 
 				filename: _outputRoot + name + '.html', 
 				template: _watchPath + name + '.html', 
-				inject: true, 
+				inject: 'body', 
 				hash: true, 
 				chunks: ['vendors', name]
 			}));

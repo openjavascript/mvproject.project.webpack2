@@ -1,10 +1,10 @@
 /* 频道导航 */
-.channel-nav{ background-color:#6090F5;height:40px; line-height:40px; font-size:18px; }
+.channel-nav{ background-color:@btn-bg-color;height:40px; line-height:40px; font-size:18px; }
 .channel-nav ul{ 
     margin-left:0px; 
     /*height: 40px; */
     /*overflow: hidden;*/
-    background-color:#6090F5;
+    background-color: @btn-bg-color;
 }
 
 
@@ -89,22 +89,6 @@
     /*visibility: hidden;*/
 }
 
-
-.channel-nav li.nav_item ._nav_sub_cat ._search_dropdown:hover ._search_opt_pop 
-, .channel-nav li.nav_item ._nav_sub_cat ._search_dropdown:hover ._up_arrow {
-	visibility: visible;
-}
-
-.channel-nav li.nav_item ._nav_sub_cat ._search_dropdown ._list_icon {
-	width: 23px;
-    height: 16px;
-    display: inline-block;
-    background-image: url(../img/list/list-icon.png);
-    background-repeat: no-repeat;
-    background-position: 0 0px;
-    margin-bottom: -2px;
-}
-
 .channel-nav li.nav_item ._nav_sub_cat_pop {
     position: absolute;
     z-index: 1000;
@@ -148,7 +132,7 @@
 .channel-nav li.nav_itemvisible ._nav_sub_cat_pop ul li a:hover
 , .channel-nav li.nav_item ._nav_sub_cat_pop ul li a._tag_active {
     color: #fff;
-    background-color: #6090F5;
+    background-color: @btn-bg-color;
     border-radius: 0;
 }
 
@@ -173,7 +157,7 @@
 
 .channel-nav li.nav_item ._nav_sub_cat_pop ._active
 {
-    background: #6090F5;
+    background: @btn-bg-color;
     color: #fff;
 }
 
