@@ -6,7 +6,7 @@
 
 初始化燕尾服(如果没有的话):  `mvproject install stc`
 
-安装项目内容:                 `mvproject install webpack1`
+安装项目内容:                 `mvproject install webpack2`
 
 ## 构建编译
 
