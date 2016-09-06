@@ -41,10 +41,10 @@ var config = {
             , { test: /\.json$/, loader: "json-loader" }
             , { test: /\.jsx$/, loader: "jsx-loader?insertPragma=React.DOM&harmony" }
 			, { test: /\.tpl$/, loader: "underscore-template-loader" }
-			, { test: /\.jpg$/, loader: "file-loader?name=../img/[hash].[ext]" }
-			, { test: /\.gif$/, loader: "file-loader?name=../img/[hash].[ext]" }
-			, { test: /\.jpg$/, loader: "file-loader" },
-			, { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
+			, { test: /\.jpg$/, loader: "file-loader?name=../img/[name].[ext]" }
+			, { test: /\.gif$/, loader: "file-loader?name=../img/[name].[ext]" }
+			, { test: /\.png$/, loader: "file-loader?name=../img/[name].[ext]" }
+			//, { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
         ]
     }
     , externals: {
