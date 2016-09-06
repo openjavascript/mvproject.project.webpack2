@@ -9,6 +9,7 @@ var I18nPlugin = require("i18n-webpack-plugin");
 
 var _watchPath = "./src-webpack/";
 var _outputRoot = __dirname+"/src/";
+var _outputStatic = _outputRoot + 'static/';
 
 
 var languages = {
@@ -29,10 +30,8 @@ var config = {
     entry: entry
 
     , output: {
-        path: _outputRoot + '/static/'
-        , publicPath: "./static/"
-        , filename: "js/[name].js"
-        //, chunkFilename: 'js/[id].chunk.js' 
+        path: './src/static/js'
+        , filename: "[name].js"
     }
 
     , module: {
@@ -42,6 +41,8 @@ var config = {
             , { test: /\.json$/, loader: "json-loader" }
             , { test: /\.jsx$/, loader: "jsx-loader?insertPragma=React.DOM&harmony" }
 			, { test: /\.tpl$/, loader: "underscore-template-loader" }
+			, { test: /\.jpg$/, loader: "file-loader?name=../img/[hash].[ext]" }
+			, { test: /\.gif$/, loader: "file-loader?name=../img/[hash].[ext]" }
 			, { test: /\.jpg$/, loader: "file-loader" },
 			, { test: /\.png$/, loader: "url-loader?mimetype=image/png" }
         ]
@@ -72,11 +73,13 @@ var config = {
           , React: "react"
           , ReactDOM: "react-dom"
         })
-        , new ExtractTextPlugin( 'css/[name].css')
+        , new ExtractTextPlugin( '../css/[name].css')
         , new webpack.HotModuleReplacementPlugin() 
+		/*
         , new I18nPlugin(
             languages[ 'cn' ]
         )
+		*/
     ]
 }
 
@@ -101,7 +104,6 @@ foreachFolder(_watchPath,function(list){
 
 module.exports = config;
 
-/* 遍历目录中的文件通过数组返回 */
 function foreachFolder(path, cb){
     var folder_exists = fs.existsSync(path);
     var fileList = [];
