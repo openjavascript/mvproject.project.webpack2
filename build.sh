@@ -2,7 +2,7 @@
 #git pull;
 
 
-rm -rf src/static/js/*hot-update*
+rm -rf src/static/*hot-update*
 
 
 # 燕尾服目录
