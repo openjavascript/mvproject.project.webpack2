@@ -3,6 +3,7 @@
 
 
 rm -rf src/static/*hot-update*
+rm -rf src/static/js/*hot-update*
 
 
 # 燕尾服目录
